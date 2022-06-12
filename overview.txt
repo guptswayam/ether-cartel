@@ -1,0 +1,17 @@
+############################## Project Overview ##############################
+1. The Ether Cartel app is for the dealers who are looking forward to selling their cars through Ethereum Blockchain.
+2. For becoming the Dealer, Admin needs to create or approve the dealer.
+3. Admin, Dealer and End Users are three kind of users and everyone should be able to see the listed cars by dealers
+4. Dealer can't buy his own listings
+5. Every Car will gonna have price, category, seats, name, company
+6. Cars list should be sortable based on price
+7. Cars list can be filtered based on category, seats, company
+8. Every Car listed by Dealer will have quantity also.
+9. User can only buy single car at a time
+
+
+############################## Plan Of Attack ############################
+1. We need to use the Ownable Contract from openzeppelin for admin rights.
+2. We need one Delaer Contract, which will contain the Dealers list, create Dealer and delete Dealer function.
+3. We need one car Contract or Struct
+4. We need one Showroom Contract, which will have all the functionalities for creating, selling and listing the car
