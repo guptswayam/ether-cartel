@@ -28,8 +28,8 @@ class App extends React.Component {
   async componentDidMount() {
     this.web3 = await getWeb3();
 
-    // this.accounts = await this.web3.eth.getAccounts();
-    // console.log(this.accounts)
+    // const accounts = await this.web3.eth.requestAccounts();
+    // console.log(accounts)
 
     // Get the contract instance.
     this.networkId = await this.web3.eth.net.getId();

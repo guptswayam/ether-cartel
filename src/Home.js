@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Row, Col, Card, Button, Spinner, Form } from 'react-bootstrap'
 import camaroImage from "./assets/camaro.jpg";
 import Web3 from 'web3';
+import {promisify} from "util"
+
+const sleep = promisify(setTimeout)
 
 const CATEGORIES = {
   0: "SEDAN",
@@ -22,6 +25,8 @@ function Home({showroomInstance, carInstance, account}) {
 
   const fetchItemsCount = async () => {
     // account can be null if the user didn't connect to a wallet, but we should always pass the from property in call fn to avoid header not found error, https://github.com/88mphapp/ng88mph-frontend/issues/55
+    // Restart the browser if this header not found still there.
+    // Other workaround for this error is to add 100ms delay b/w the requests made to blockchain, https://github.com/MetaMask/metamask-extension/issues/7234
     const itemsCount = await showroomInstance.methods.itemCount().call({from: account});
     // console.log(itemsCount);
     setItemsCount(itemsCount);

@@ -41,6 +41,7 @@ function MyPurchases({showroomInstance, carInstance, account, web3}) {
 
   const fetchCars = async () => {
 
+    // https://stackoverflow.com/questions/53121040/how-to-get-top-n-ethereum-accounts-by-balance-through-web3-js
 
     let data = [];
     while(data.length < LIMIT && toBlock.current <= latestBlock.current - SHOWROOM_CONTRACT_BLOCK_NUMBER) {
