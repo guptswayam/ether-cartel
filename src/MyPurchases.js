@@ -73,7 +73,8 @@ function MyPurchases({showroomInstance, carInstance, account, web3}) {
         name,
         description,
         carCount,
-        quantitySold
+        quantitySold,
+        NFTId: el.returnValues._tokenId
       }
     }))
     
@@ -117,6 +118,8 @@ function MyPurchases({showroomInstance, carInstance, account, web3}) {
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>
                       {item.description} - {CATEGORIES[item.category]}
+                      <br></br>
+                      NFT Id: {item.NFTId}
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>
