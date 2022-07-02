@@ -27,6 +27,7 @@ function Home({showroomInstance, carInstance, account}) {
     // account can be null if the user didn't connect to a wallet, but we should always pass the from property in call fn to avoid header not found error, https://github.com/88mphapp/ng88mph-frontend/issues/55
     // Restart the browser if this header not found still there.
     // Other workaround for this error is to add 100ms delay b/w the requests made to blockchain, https://github.com/MetaMask/metamask-extension/issues/7234
+    // [IMP] Update the metamask if update is available
     const itemsCount = await showroomInstance.methods.itemCount().call({from: account});
     // console.log(itemsCount);
     setItemsCount(itemsCount);

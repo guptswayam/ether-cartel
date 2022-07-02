@@ -68,7 +68,7 @@ contract Showroom is ReentrancyGuard{
     // 4. Transfer NFT ownership
     nft.transferFrom(address(this), msg.sender, car.carTokenIds(car.quantitySold()));
 
-    emit CarSold(msg.sender, _itemId, car.quantitySold());
+    emit CarSold(msg.sender, _itemId, car.carTokenIds(car.quantitySold()));
 
   }
 
